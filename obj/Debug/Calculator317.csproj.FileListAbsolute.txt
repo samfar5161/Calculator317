@@ -1,0 +1,10 @@
+C:\Users\Ashton\source\repos\Calculator317\Calculator317\bin\Debug\Calculator317.exe.config
+C:\Users\Ashton\source\repos\Calculator317\Calculator317\bin\Debug\Calculator317.exe
+C:\Users\Ashton\source\repos\Calculator317\Calculator317\bin\Debug\Calculator317.pdb
+C:\Users\Ashton\source\repos\Calculator317\Calculator317\obj\Debug\Calculator317.csprojAssemblyReference.cache
+C:\Users\Ashton\source\repos\Calculator317\Calculator317\obj\Debug\Calculator317.Properties.Resources.resources
+C:\Users\Ashton\source\repos\Calculator317\Calculator317\obj\Debug\Calculator317.csproj.GenerateResource.cache
+C:\Users\Ashton\source\repos\Calculator317\Calculator317\obj\Debug\Calculator317.csproj.CoreCompileInputs.cache
+C:\Users\Ashton\source\repos\Calculator317\Calculator317\obj\Debug\Calculator317.exe
+C:\Users\Ashton\source\repos\Calculator317\Calculator317\obj\Debug\Calculator317.pdb
+C:\Users\Ashton\source\repos\Calculator317\Calculator317\obj\Debug\Calculator317.Calculator.resources

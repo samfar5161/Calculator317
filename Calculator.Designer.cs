@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.TxtDisplay = new System.Windows.Forms.TextBox();
             this.BtnOne = new System.Windows.Forms.Button();
             this.BtnTwo = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
             this.BtnMemClear = new System.Windows.Forms.Button();
             this.BtnMemAdd = new System.Windows.Forms.Button();
             this.BtnNegative = new System.Windows.Forms.Button();
+            this.BtnSquare = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TxtDisplay
@@ -59,11 +61,12 @@
             this.TxtDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold);
             this.TxtDisplay.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.TxtDisplay.Location = new System.Drawing.Point(12, 12);
-            this.TxtDisplay.MaxLength = 10;
+            this.TxtDisplay.MaxLength = 8;
             this.TxtDisplay.Name = "TxtDisplay";
             this.TxtDisplay.ReadOnly = true;
             this.TxtDisplay.Size = new System.Drawing.Size(567, 75);
             this.TxtDisplay.TabIndex = 29;
+            this.TxtDisplay.TabStop = false;
             this.TxtDisplay.Tag = "TxtDisplay";
             this.TxtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtDisplay.WordWrap = false;
@@ -77,6 +80,7 @@
             this.BtnOne.Name = "BtnOne";
             this.BtnOne.Size = new System.Drawing.Size(106, 51);
             this.BtnOne.TabIndex = 1;
+            this.BtnOne.TabStop = false;
             this.BtnOne.Text = "1";
             this.BtnOne.UseVisualStyleBackColor = false;
             this.BtnOne.Click += new System.EventHandler(this.BtnOne_Click);
@@ -90,6 +94,7 @@
             this.BtnTwo.Name = "BtnTwo";
             this.BtnTwo.Size = new System.Drawing.Size(106, 51);
             this.BtnTwo.TabIndex = 2;
+            this.BtnTwo.TabStop = false;
             this.BtnTwo.Tag = "BtnTwo";
             this.BtnTwo.Text = "2";
             this.BtnTwo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -105,6 +110,7 @@
             this.BtnThree.Name = "BtnThree";
             this.BtnThree.Size = new System.Drawing.Size(106, 51);
             this.BtnThree.TabIndex = 3;
+            this.BtnThree.TabStop = false;
             this.BtnThree.Tag = "BtnThree";
             this.BtnThree.Text = "3";
             this.BtnThree.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -120,6 +126,7 @@
             this.BtnFour.Name = "BtnFour";
             this.BtnFour.Size = new System.Drawing.Size(106, 51);
             this.BtnFour.TabIndex = 4;
+            this.BtnFour.TabStop = false;
             this.BtnFour.Tag = "BtnFour";
             this.BtnFour.Text = "4";
             this.BtnFour.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -135,6 +142,7 @@
             this.BtnFive.Name = "BtnFive";
             this.BtnFive.Size = new System.Drawing.Size(106, 51);
             this.BtnFive.TabIndex = 5;
+            this.BtnFive.TabStop = false;
             this.BtnFive.Tag = "BtnFive";
             this.BtnFive.Text = "5";
             this.BtnFive.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -150,6 +158,7 @@
             this.BtnSix.Name = "BtnSix";
             this.BtnSix.Size = new System.Drawing.Size(106, 51);
             this.BtnSix.TabIndex = 6;
+            this.BtnSix.TabStop = false;
             this.BtnSix.Tag = "BtnSix";
             this.BtnSix.Text = "6";
             this.BtnSix.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -165,6 +174,7 @@
             this.BtnSeven.Name = "BtnSeven";
             this.BtnSeven.Size = new System.Drawing.Size(106, 51);
             this.BtnSeven.TabIndex = 7;
+            this.BtnSeven.TabStop = false;
             this.BtnSeven.Tag = "BtnSeven";
             this.BtnSeven.Text = "7";
             this.BtnSeven.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -180,6 +190,7 @@
             this.BtnEight.Name = "BtnEight";
             this.BtnEight.Size = new System.Drawing.Size(106, 51);
             this.BtnEight.TabIndex = 8;
+            this.BtnEight.TabStop = false;
             this.BtnEight.Tag = "BtnEight";
             this.BtnEight.Text = "8";
             this.BtnEight.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -195,6 +206,7 @@
             this.BtnNine.Name = "BtnNine";
             this.BtnNine.Size = new System.Drawing.Size(106, 51);
             this.BtnNine.TabIndex = 9;
+            this.BtnNine.TabStop = false;
             this.BtnNine.Tag = "BtnNine";
             this.BtnNine.Text = "9";
             this.BtnNine.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -210,6 +222,7 @@
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(106, 51);
             this.BtnClear.TabIndex = 10;
+            this.BtnClear.TabStop = false;
             this.BtnClear.Tag = "BtnClear";
             this.BtnClear.Text = "C";
             this.BtnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -225,6 +238,7 @@
             this.BtnZero.Name = "BtnZero";
             this.BtnZero.Size = new System.Drawing.Size(218, 51);
             this.BtnZero.TabIndex = 11;
+            this.BtnZero.TabStop = false;
             this.BtnZero.Tag = "BtnZero";
             this.BtnZero.Text = "0";
             this.BtnZero.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -239,6 +253,7 @@
             this.BtnDecimal.Name = "BtnDecimal";
             this.BtnDecimal.Size = new System.Drawing.Size(106, 51);
             this.BtnDecimal.TabIndex = 12;
+            this.BtnDecimal.TabStop = false;
             this.BtnDecimal.Tag = "BtnDecimal";
             this.BtnDecimal.Text = ".";
             this.BtnDecimal.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -254,6 +269,7 @@
             this.BtnClearEverything.Name = "BtnClearEverything";
             this.BtnClearEverything.Size = new System.Drawing.Size(106, 51);
             this.BtnClearEverything.TabIndex = 13;
+            this.BtnClearEverything.TabStop = false;
             this.BtnClearEverything.Tag = "BtnClearEverything";
             this.BtnClearEverything.Text = "C.E.";
             this.BtnClearEverything.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -268,6 +284,7 @@
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(106, 51);
             this.BtnAdd.TabIndex = 14;
+            this.BtnAdd.TabStop = false;
             this.BtnAdd.Tag = "BtnAdd";
             this.BtnAdd.Text = "+";
             this.BtnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -282,6 +299,7 @@
             this.BtnSubtract.Name = "BtnSubtract";
             this.BtnSubtract.Size = new System.Drawing.Size(106, 51);
             this.BtnSubtract.TabIndex = 15;
+            this.BtnSubtract.TabStop = false;
             this.BtnSubtract.Tag = "BtnSubtract";
             this.BtnSubtract.Text = "-";
             this.BtnSubtract.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -311,6 +329,7 @@
             this.BtnDivide.Name = "BtnDivide";
             this.BtnDivide.Size = new System.Drawing.Size(106, 51);
             this.BtnDivide.TabIndex = 17;
+            this.BtnDivide.TabStop = false;
             this.BtnDivide.Tag = "BtnDivide";
             this.BtnDivide.Text = "/";
             this.BtnDivide.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -325,6 +344,7 @@
             this.BtnEquals.Name = "BtnEquals";
             this.BtnEquals.Size = new System.Drawing.Size(106, 222);
             this.BtnEquals.TabIndex = 18;
+            this.BtnEquals.TabStop = false;
             this.BtnEquals.Tag = "BtnEquals";
             this.BtnEquals.Text = "=";
             this.BtnEquals.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -339,6 +359,7 @@
             this.BtnMemStore.Name = "BtnMemStore";
             this.BtnMemStore.Size = new System.Drawing.Size(106, 51);
             this.BtnMemStore.TabIndex = 19;
+            this.BtnMemStore.TabStop = false;
             this.BtnMemStore.Tag = "BtnMemStore";
             this.BtnMemStore.Text = "MS";
             this.BtnMemStore.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -353,6 +374,7 @@
             this.BtnMemRet.Name = "BtnMemRet";
             this.BtnMemRet.Size = new System.Drawing.Size(106, 51);
             this.BtnMemRet.TabIndex = 20;
+            this.BtnMemRet.TabStop = false;
             this.BtnMemRet.Tag = "BtnMemRet";
             this.BtnMemRet.Text = "MR";
             this.BtnMemRet.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -363,10 +385,11 @@
             // 
             this.BtnMemClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnMemClear.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BtnMemClear.Location = new System.Drawing.Point(236, 113);
+            this.BtnMemClear.Location = new System.Drawing.Point(348, 113);
             this.BtnMemClear.Name = "BtnMemClear";
             this.BtnMemClear.Size = new System.Drawing.Size(106, 51);
             this.BtnMemClear.TabIndex = 21;
+            this.BtnMemClear.TabStop = false;
             this.BtnMemClear.Tag = "BtnMemClear";
             this.BtnMemClear.Text = "MC";
             this.BtnMemClear.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -377,10 +400,11 @@
             // 
             this.BtnMemAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnMemAdd.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BtnMemAdd.Location = new System.Drawing.Point(348, 113);
+            this.BtnMemAdd.Location = new System.Drawing.Point(236, 113);
             this.BtnMemAdd.Name = "BtnMemAdd";
             this.BtnMemAdd.Size = new System.Drawing.Size(106, 51);
             this.BtnMemAdd.TabIndex = 22;
+            this.BtnMemAdd.TabStop = false;
             this.BtnMemAdd.Tag = "BtnMemAdd";
             this.BtnMemAdd.Text = "M+";
             this.BtnMemAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -394,11 +418,26 @@
             this.BtnNegative.Name = "BtnNegative";
             this.BtnNegative.Size = new System.Drawing.Size(106, 51);
             this.BtnNegative.TabIndex = 23;
+            this.BtnNegative.TabStop = false;
             this.BtnNegative.Tag = "BtnNegative";
             this.BtnNegative.Text = "+ / -";
             this.BtnNegative.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnNegative.UseVisualStyleBackColor = true;
             this.BtnNegative.Click += new System.EventHandler(this.BtnNegative_Click);
+            // 
+            // BtnSquare
+            // 
+            this.BtnSquare.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSquare.Location = new System.Drawing.Point(236, 170);
+            this.BtnSquare.Name = "BtnSquare";
+            this.BtnSquare.Size = new System.Drawing.Size(106, 51);
+            this.BtnSquare.TabIndex = 30;
+            this.BtnSquare.TabStop = false;
+            this.BtnSquare.Tag = "BtnNegative";
+            this.BtnSquare.Text = "x^2";
+            this.BtnSquare.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.BtnSquare.UseVisualStyleBackColor = true;
+            this.BtnSquare.Click += new System.EventHandler(this.BtnSquare_Click);
             // 
             // Calculator
             // 
@@ -406,6 +445,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(593, 498);
+            this.Controls.Add(this.BtnSquare);
             this.Controls.Add(this.BtnNegative);
             this.Controls.Add(this.BtnMemAdd);
             this.Controls.Add(this.BtnMemClear);
@@ -430,8 +470,11 @@
             this.Controls.Add(this.BtnTwo);
             this.Controls.Add(this.BtnOne);
             this.Controls.Add(this.TxtDisplay);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Calculator";
             this.Text = "Calculator 317";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Calculator_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,6 +506,7 @@
         private System.Windows.Forms.Button BtnMemClear;
         private System.Windows.Forms.Button BtnMemAdd;
         private System.Windows.Forms.Button BtnNegative;
+        private System.Windows.Forms.Button BtnSquare;
     }
 }
 

@@ -12,22 +12,21 @@ namespace Calculator317
 {
     public partial class Calculator : Form
     {
-        protected decimal equationLeft;
-        protected decimal equationRight;
-        protected decimal solution;
-        string operation;           // operation
-        Boolean isDecimal = false;  // determine if decimal is used   
-        protected decimal memory;   // memory variable
+        protected decimal equationLeft;     // first half of equation
+        protected decimal equationRight;    // second half of equation
+        protected decimal solution;         // solution
+        string operation;                   // operation
+        Boolean isDecimal = false;          // determine if decimal point is being used in current string.    
+        protected decimal memory;           // memory variable
 
         public Calculator()
         {
             InitializeComponent();
 
-            if (TxtDisplay.Text == "")
-                TxtDisplay.Text = "0";
+            TxtDisplay.Text = "0";
         }
 
-        // CLEAR BUTTON
+        // CLEAR BUTTONS //
         private void BtnClear_Click(object sender, EventArgs e)
         {
             TxtDisplay.Text = "0";
@@ -46,7 +45,7 @@ namespace Calculator317
         }
 
 
-        // NUMBER BUTTONS
+        // NUMBER BUTTONS //
         private void BtnOne_Click(object sender, EventArgs e)
         {
             SetDisplay("1");
@@ -97,15 +96,6 @@ namespace Calculator317
             SetDisplay("0");
         }
 
-        // function for displaying the number in the TxtDisplay textbox
-        public void SetDisplay(string x)
-        {
-            if (TxtDisplay.Text == "0")
-                TxtDisplay.Text = x;
-            else
-                TxtDisplay.Text = TxtDisplay.Text + x;
-        }
-
         // decimal
         private void BtnDecimal_Click(object sender, EventArgs e)
         {
@@ -115,7 +105,8 @@ namespace Calculator317
             BtnDecimal.Enabled = false;
         }
 
-        // OPERATORS
+
+        // OPERATORS //
         // add
         private void BtnAdd_Click(object sender, EventArgs e)
         {
@@ -123,8 +114,7 @@ namespace Calculator317
             // operation
             operation = "+";
             TxtDisplay.Text = "0";
-            isDecimal = false;
-            BtnDecimal.Enabled = true;
+            IsDecimal(TxtDisplay.Text);
         }
 
         // subtract
@@ -135,8 +125,7 @@ namespace Calculator317
 
             operation = "-";
             TxtDisplay.Text = "0";
-            isDecimal = false;
-            BtnDecimal.Enabled = true;
+            IsDecimal(TxtDisplay.Text);
 
         }
 
@@ -147,8 +136,7 @@ namespace Calculator317
             equationLeft = Convert.ToDecimal(TxtDisplay.Text);
             operation = "*";
             TxtDisplay.Text = "0";
-            isDecimal = false;
-            BtnDecimal.Enabled = true;
+            IsDecimal(TxtDisplay.Text);
 
         }
 
@@ -159,8 +147,7 @@ namespace Calculator317
 
             operation = "/";
             TxtDisplay.Text = "0";
-            isDecimal = false;
-            BtnDecimal.Enabled = true;
+            IsDecimal(TxtDisplay.Text);
         }
 
         // equals
@@ -173,16 +160,19 @@ namespace Calculator317
                 case "+":
                     solution = equationLeft + equationRight;
                     TxtDisplay.Text = solution.ToString();
+                    IsDecimal(TxtDisplay.Text);
                     break;
 
                 case "-":
                     solution = equationLeft - equationRight;
                     TxtDisplay.Text = solution.ToString();
+                    IsDecimal(TxtDisplay.Text);
                     break;
 
                 case "*":
                     solution = equationLeft * equationRight;
                     TxtDisplay.Text = solution.ToString();
+                    IsDecimal(TxtDisplay.Text);
                     break;
 
                 case "/":
@@ -190,19 +180,19 @@ namespace Calculator317
                     {
                         solution = equationLeft / equationRight;
                         TxtDisplay.Text = solution.ToString();
+                        IsDecimal(TxtDisplay.Text);
                     }
                     catch (DivideByZeroException)
                     {
                         TxtDisplay.Text = "Error";
-                        isDecimal = false;
-                        BtnDecimal.Enabled = true;
                     }
                     break;
             }
 
         }
 
-        // Memory Operators
+
+        // MEMORY OPERATORS //
         // Memory Store
         private void BtnMemStore_Click(object sender, EventArgs e)
         {
@@ -229,6 +219,7 @@ namespace Calculator317
 
         }
 
+        // EXTRAS //
         // invert value
         private void BtnNegative_Click(object sender, EventArgs e)
         {
@@ -236,7 +227,204 @@ namespace Calculator317
             TxtDisplay.Text = n.ToString();
 
         }
-        
+
+        // square 
+        private void BtnSquare_Click(object sender, EventArgs e)
+        {
+            decimal x = Convert.ToDecimal(TxtDisplay.Text);
+            decimal y = x * x;
+            TxtDisplay.Text = y.ToString();
+        }
+
+
+        // BACKEND FUNCTIONS //
+        // determine if string in display has a decimal point
+        private void IsDecimal(string x)
+        {
+            if (CheckDecimal(x))
+            {
+                isDecimal = true;
+                BtnDecimal.Enabled = false;
+            }
+            else
+            {
+                isDecimal = false;
+                BtnDecimal.Enabled = true;
+            }
+        }
+
+        // check if string has a decimal point in it.
+        private Boolean CheckDecimal(string x)
+        {
+            for(int i = 0; i < x.Length; i++)
+            {
+                if (x[i].ToString() == ".")
+                    return true;
+            }
+
+            return false;
+        }
+
+        // function for displaying the number in the TxtDisplay textbox
+        public void SetDisplay(string x)
+        {
+            if (TxtDisplay.Text == "0")
+                TxtDisplay.Text = x;
+            else
+                TxtDisplay.Text = TxtDisplay.Text + x;
+        }
+
+        // Key events 
+        private void Calculator_KeyDown(object sender, KeyEventArgs e)
+        {
+            // switch statement to handle key events
+            switch (e.KeyCode)
+            {
+                // Numbers
+                case Keys.D1:
+                    BtnOne_Click(sender, e);
+                    break;
+
+                case Keys.NumPad1:
+                    BtnOne_Click(sender, e);
+                    break;
+
+                case Keys.D2:
+                    BtnTwo_Click(sender, e);
+                    break;
+
+                case Keys.NumPad2:
+                    BtnTwo_Click(sender, e);
+                    break;
+
+                case Keys.D3:
+                    BtnThree_Click(sender, e);
+                    break;
+
+                case Keys.NumPad3:
+                    BtnThree_Click(sender, e);
+                    break;
+
+                case Keys.D4:
+                    BtnFour_Click(sender, e);
+                    break;
+
+                case Keys.NumPad4:
+                    BtnFour_Click(sender, e);
+                    break;
+
+                case Keys.D5:
+                    BtnFive_Click(sender, e);
+                    break;
+                    
+                case Keys.NumPad5:
+                    BtnFive_Click(sender, e);
+                    break;
+
+                case Keys.D6:
+                    BtnSix_Click(sender, e);
+                    break;
+
+                case Keys.NumPad6:
+                    BtnSix_Click(sender, e);
+                    break;
+
+                case Keys.D7:
+                    BtnSeven_Click(sender, e);
+                    break;
+
+                case Keys.NumPad7:
+                    BtnSeven_Click(sender, e);
+                    break;
+
+                case Keys.D8:
+                    BtnEight_Click(sender, e);
+                    break;
+
+                case Keys.NumPad8:
+                    BtnEight_Click(sender, e);
+                    break;
+
+                case Keys.D9:
+                    BtnNine_Click(sender, e);
+                    break;
+
+                case Keys.NumPad9:
+                    BtnNine_Click(sender, e);
+                    break;
+
+                case Keys.D0:
+                    BtnZero_Click(sender, e);
+                    break;
+
+                case Keys.NumPad0:
+                    BtnZero_Click(sender, e);
+                    break;
+
+                // Decimal and Period for decimal
+                case Keys.Decimal:
+                    if (CheckDecimal(TxtDisplay.Text))
+                        break;
+                    else
+                        BtnDecimal_Click(sender, e);
+                    break;
+
+                case Keys.OemPeriod:
+                    if (CheckDecimal(TxtDisplay.Text))
+                        break;
+                    else
+                        BtnDecimal_Click(sender, e);
+                    break;
+
+                // Addition
+                case Keys.Add:
+                    BtnAdd_Click(sender, e);
+                    break;
+
+                case Keys.Oemplus:
+                    BtnAdd_Click(sender, e);
+                    break;
+
+                // subtraction
+                case Keys.OemMinus:
+                    BtnSubtract_Click(sender, e);
+                    break;
+
+                case Keys.Subtract:
+                    BtnSubtract_Click(sender, e);
+                    break;
+
+                // Multiplication
+                case Keys.Multiply:
+                    BtnMultiply_Click(sender, e);
+                    break;
+                
+                // Division
+                case Keys.Divide:
+                    BtnDivide_Click(sender, e);
+                    break;
+
+                case Keys.OemBackslash:
+                    BtnDivide_Click(sender, e);
+                    break;
+
+                // Equals
+                case Keys.Enter:
+                    BtnEquals_Click(sender, e);
+                    break;
+
+                // clear
+                case Keys.C:
+                    BtnClear_Click(sender, e);
+                    break;
+
+                // Clear all
+                case Keys.Delete:
+                    BtnClearEverything_Click(sender, e);
+                    break;
+            }
+                
+        }
     }
 
    
